@@ -1,18 +1,12 @@
-name: smart_parking
-description: A simple Smart Parking prototype (Flutter)
-publish_to: "none"
-version: 0.0.1+1
+name: demo_app
+description: A simple Flutter project for Codemagic CI/CD test
+publish_to: 'none'
 
 environment:
-  sdk: ">=2.18.0 <3.0.0"
+  sdk: '>=3.0.0 <4.0.0'
 
 dependencies:
   flutter:
-    sdk: flutter
-  google_maps_flutter: ^2.2.3
-
-dev_dependencies:
-  flutter_test:
     sdk: flutter
 
 flutter:
