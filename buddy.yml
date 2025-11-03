@@ -1,0 +1,17 @@
+version: '2'
+name: Build Flutter APK
+pipelines:
+  default:
+    - action: Run
+      name: Setup and Build APK
+      image: ubuntu:22.04
+      commands:
+        - apt-get update && apt-get install -y curl unzip git xz-utils
+        - curl -sSL https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.13.4-stable.tar.xz -o flutter.tar.xz
+        - tar xf flutter.tar.xz
+        - export PATH=$PATH:$PWD/flutter/bin
+        - flutter --version
+        - flutter pub get
+        - flutter build apk --release
+      artifacts:
+        - path: build/app/outputs/flutter-apk/app-release.apk
